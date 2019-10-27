@@ -1,10 +1,10 @@
 body {
+    text-align: center;
     background-image: url(bg.png);
     width: 800px;
     margin: auto; 
     font-family: Arial, Helvetica, sans-serif;
 }
-
 
 nav {
     position:fixed;
@@ -34,7 +34,7 @@ li:last-child{
     border-right: none;
 }
 .active {
-    background-color: indianred;
+    background-color: darkgreen;
 }
 
 #BorderRight {
@@ -54,30 +54,69 @@ li:last-child{
     font-size: 12px;
     color: white;
     border: 1px lightgrey;
-    background-color:lightgrey;
+    background-color:grey;
+    cursor: pointer;
     }
 
 #Nachricht {
     display: inline-block;
-    width: 450px;
+    text-align: start;
+    width: 300px;
     height: 50px;
-    margin: 2px; padding: 5px;
-    font-size: 12px;
-    color: white;
-    border: 1px lightgrey;
-    background-color:lightgrey;
-}
-
-#Absenden {
-display: inline-block;
-    width: 100px;
-    height: 20px;
-    margin: 20px;
+    margin: 2px; 
     padding: 5px;
     font-size: 12px;
     color: white;
     border: 1px lightgrey;
-    background-color:lightgrey;
+    background-color:grey;
+    cursor: pointer;
+}
+
+.Button {
+display: inline-block;
+text-decoration: none;
+    width: 100px;
+    height: 20px;
+    margin: 2px;
+    padding: 5px;
+    font-size: 12px;
+    color: white;
+    border: 1px lightgrey;
+    background-color:grey;
+    cursor: pointer;
+}
+
+.ImageButton {
+    display: inline-block;
+    text-decoration: none;
+    width: 60px;
+    height: 60px;
+    margin: 2px;
+    padding: 0px;
+    background-image: url(glyph-logo_May2016.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.ImageButton:hover {
+   background-color: grey;
+}
+
+h1 {
+    color: darkgreen;
+}
+
+ img {
+     margin-top: 5px;
+     margin-left: auto;
+     margin-right: auto;
+     margin-bottom: 5px;
+ }
+
+.Video {
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
 a {
@@ -85,11 +124,12 @@ a {
     color: white;
     background-color: black;
 }
+
 .Style {
    color: grey;
     font-size: 7px;
 }
 
 a:hover {
-    background-color: grey;
+    background-color: silver;
 }
