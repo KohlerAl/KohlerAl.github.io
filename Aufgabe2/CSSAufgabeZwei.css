@@ -52,9 +52,9 @@ li:last-child{
     margin: 2px;
     padding: 5px;
     font-size: 12px;
-    color: white;
+    color: black;
     border: 1px lightgrey;
-    background-color:grey;
+    background-color:lightgrey;
     cursor: pointer;
     }
 
@@ -66,9 +66,9 @@ li:last-child{
     margin: 2px; 
     padding: 5px;
     font-size: 12px;
-    color: white;
+    color: black;
     border: 1px lightgrey;
-    background-color:grey;
+    background-color:lightgrey;
     cursor: pointer;
 }
 
@@ -80,9 +80,9 @@ text-decoration: none;
     margin: 2px;
     padding: 5px;
     font-size: 12px;
-    color: white;
+    color: black;
     border: 1px lightgrey;
-    background-color:grey;
+    background-color:lightgrey;
     cursor: pointer;
 }
 
