@@ -43,9 +43,9 @@ color: white;
 font-size: 40px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
  body {
-overflow: scroll;
+overflow: auto;
 width: 600px;
     }
 }
