@@ -42,3 +42,9 @@ h1 {
 color: white;
 font-size: 40px;
 }
+
+@media screen (max-width: 600px) {
+ body {
+overflow: scroll;
+    }
+}
