@@ -1,0 +1,27 @@
+body{
+    background-image: url(bg.png);
+    text-align: center;
+    overflow: hidden;
+}
+
+.Wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 7%;
+    z-index: 1;
+}
+
+iframe {
+    position: absolute;
+    top: 22%;
+    left: 30%;
+    z-index: 2;
+}
+
+.Schleife{
+    position: relative;
+    top: -128px;
+    left: 180px;
+    z-index: 3;
+}
