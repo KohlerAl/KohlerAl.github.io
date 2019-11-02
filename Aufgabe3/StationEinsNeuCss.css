@@ -1,0 +1,42 @@
+body{
+    background-image: url(bg.png);
+    text-align: center;
+    overflow: hidden;
+}
+
+.Wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 7%;
+    z-index: 1;
+}
+
+.Busch {
+    position: relative;
+    top: -470px;
+    z-index: 2;
+    left: -250px;
+}
+
+.Pinguin{
+    position: relative;
+    top: -350px;
+    left: 280px;
+}
+
+.Text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+p {
+    color: white;
+    font-size: 20px;
+}
+h1 {
+color: white;
+font-size: 50px;
+}
