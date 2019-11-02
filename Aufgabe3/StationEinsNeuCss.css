@@ -48,9 +48,13 @@ font-size: 40px;
 overflow: visible;
     }
 p {
-    font-size: 8px;
+    font-size: 5px;
 }
 h1 {
-    font-size: 12px;
+    font-size: 10px;
+}
+
+.Wrapper {
+    margin-top: 20%; 
 }
 }
