@@ -14,23 +14,25 @@ body{
 
 .Busch {
     position: relative;
-    top: -470px;
-    z-index: 2;
+    top: -680px;
+    z-index: 3;
     left: -250px;
 }
 
 .Pinguin{
     position: relative;
-    top: -350px;
+    top: -550px;
     left: 280px;
+    z-index: 3;
 }
 
 .Text {
     text-align: left;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    position: absolute;
-    top: 30%;
+    position: relative;
+    top: -300px;
     left: 30%;
+    z-index: 2;
   color: black;
 }
 
@@ -46,12 +48,14 @@ font-size: 40px;
 @media screen and (max-width: 900px) {
  body {
 overflow: visible;
-    }
-p {
-    font-size: 5px;
 }
-h1 {
+
+p {
     font-size: 10px;
+}
+
+h1 {
+    font-size: 20px;
 }
 
 .Wrapper {
