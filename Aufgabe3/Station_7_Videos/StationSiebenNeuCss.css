@@ -16,11 +16,39 @@ body{
     left: -10%;
 }
 
+.SternEins {
+    position: absolute;
+    top: 10%;
+    z-index: 3;
+    left: 20%; 
+}
+
+.SternZwei {
+    position: absolute;
+    top: 20%;
+    z-index: 3;
+    left: 42%; 
+}
+
+.SternDrei {
+    position: absolute;
+    top: 67%;
+    z-index: 3;
+    left: 7%; 
+}
+
 .Pinguin{
     position: absolute;
-    top: 55%;
-    left: 80%;
+    top: 7%;
+    left: 54%;
     z-index: 3;
+}
+
+.Gift {
+    position: absolute;
+    top: 70%;
+    left: 58%;
+    z-index: 4;
 }
 
 p {
@@ -41,10 +69,4 @@ h1 {
     color: white;
     top: 25%;
     left: 5%;
-}
-
-@media screen and (max-width 900px) {
-    body {
-        overflow: visible;
-    }
 }

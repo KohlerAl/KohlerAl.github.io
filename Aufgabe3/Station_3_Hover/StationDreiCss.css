@@ -1,0 +1,60 @@
+body{
+    background-image: url(bg.png);
+    text-align: center;
+}
+
+#Wrapper{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+p {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+}
+
+.SternE {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+}
+
+.SternZ {
+    position: absolute;
+    top: 51%;
+    left: 42%;
+}
+
+.SternD {
+    position: absolute;
+    top: 70%;
+    left: 70%;
+}
+
+.SternV {
+    position: absolute;
+    top: 20%;
+    left: 60%;
+}
+
+.SternE:hover {
+    background-image: url(stern_hover.png);
+}
+
+.SternZ:hover {
+    background-image: url(stern_hover.png);
+}
+
+.SternD:hover {
+    background-image: url(stern_hover.png);
+}
+
+.SternV:hover {
+    background-image: url(stern_hover.png);
+}

@@ -1,0 +1,54 @@
+body {
+    text-align: center;
+    background-image: url(bg.png);
+    width: 800px;
+    margin: auto; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#Wrapper{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Pinguin {
+    position: fixed;
+    bottom: 0;
+    right: 10%;
+}
+
+.Plant {
+    position: fixed;
+    top: 10%;
+    left: 10%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 10px;
+    padding: 10px;
+}
+
+li {
+    float: left;
+    border: 1px solid darkred;
+}
+
+a {
+    font-size: 20px;
+    color: white;
+    background-color: darkgreen;
+}
+
+li a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 20px
+}
+
+li:last-child{
+    border-right: none;
+}
