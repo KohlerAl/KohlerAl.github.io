@@ -20,16 +20,16 @@ body{
 
 .Pinguin{
     position: absolute;
-    top: 55%;
-    left: 80%;
+    top: 250px;
+    left: 500px;
     z-index: 3;
 }
 
 p {
     color: white;
     position: absolute;
-    top: 45%;
-    left: 5%;
+    top: 200px;
+    left: 25px;
     text-align: left;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1em;
@@ -41,12 +41,6 @@ h1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 2em;
     color: white;
-    top: 25%;
-    left: 5%;
-}
-
-@media screen and (max-width 900px) {
-    body {
-        overflow: visible;
-    }
+    top: 100px;
+    left: 25px;
 }
