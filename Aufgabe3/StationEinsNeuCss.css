@@ -1,4 +1,6 @@
 body{
+    width: 100%;
+    height: 100%;
     background-image: url(bg.png);
     text-align: center;
 }
@@ -11,9 +13,9 @@ body{
 }
 .Busch {
     position: absolute;
-    top: -20%;
+    top: -75px;
     z-index: 3;
-    left: -10%;
+    left: -70px;
 }
 
 .Pinguin{
