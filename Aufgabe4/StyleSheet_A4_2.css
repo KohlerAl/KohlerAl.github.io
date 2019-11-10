@@ -43,17 +43,27 @@ img {
 .Antwort1 {
     position: absolute;
     top: 50%;
-    left: -15px;
+    left: -10px;
     max-width: 100%;
-    margin: 10px;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
 }
 
 .Answer1 {
   position: absolute;
-  top: 50%;
+  top: 48%;
   left: 35%;
 }
+
+#AAntwort1 {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+}
+.Antwort1:hover{
+  opacity: 0;
+}
+
 
 .Antwort2 {
   position: absolute;
@@ -68,6 +78,33 @@ img {
   position: absolute;
   top: 60%;
   left: 35%;
+}
+
+#AAntwort2 {
+  position: absolute;
+  top: 62%;
+  left: 15px;
+}
+.Antwort2:hover{
+  opacity: 0;
+}
+
+#AAntwort3 {
+  position: absolute;
+  top: 72%;
+  left: 15px;
+}
+.Antwort3:hover{
+  opacity: 0;
+}
+
+#AAntwort4 {
+  position: absolute;
+  top: 82%;
+  left: 15px;
+}
+.Antwort4:hover{
+  opacity: 0;
 }
 
 .Antwort3 {
