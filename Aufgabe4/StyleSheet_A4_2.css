@@ -3,7 +3,7 @@ body {
   text-align: center;
 }
 p {
-    font-size: 14px;
+    font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     z-index: 2;
@@ -30,7 +30,7 @@ img {
 
 .Frage1 {
   position: absolute;
-  top: 28%;
+  top: 29%;
   left: 20%;
 }
 
@@ -51,7 +51,7 @@ img {
 
 .Answer1 {
   position: absolute;
-  top: 48%;
+  top: 49%;
   left: 35%;
 }
 
@@ -76,7 +76,7 @@ img {
 
 .Answer2 {
   position: absolute;
-  top: 60%;
+  top: 61%;
   left: 35%;
 }
 
@@ -118,7 +118,7 @@ img {
 
 .Answer3 {
   position: absolute;
-  top: 70%;
+  top: 71%;
   left: 35%;
 }
 
@@ -133,7 +133,7 @@ img {
 
 .Answer4 {
   position: absolute;
-  top: 80%;
+  top: 81%;
   left: 35%;
 }
 
