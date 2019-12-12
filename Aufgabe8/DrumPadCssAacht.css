@@ -138,9 +138,35 @@ body {
 
 #PlayBeat {
     position: relative;
-    top: -930px;
+    top: -905px;
+    right: -20px;
+    height: 50px;
+    width:50px;
 }
 
+#Trash {
+    position: relative;
+    top: -955px;
+    right: -100px;
+    height: 50px;
+    width:50px;
+}
+
+#Mic {
+    position: relative;
+    top: -1000px; 
+    right: -400px;
+    height: 50px;
+    width:50px;
+}
+
+#Pause {
+    position: relative;
+    height: 50px;
+    width:50px;
+    top: -970px;
+    right: 20px;
+}
 p {
     font-size: 12px;
     position: fixed;
