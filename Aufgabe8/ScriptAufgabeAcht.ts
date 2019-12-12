@@ -51,13 +51,13 @@ function RecordBeat(): void {
 
 window.addEventListener("load", function (): void {
     document.querySelector("#SoundOne").addEventListener("mousedown", function (): void { playSampl("kick.mp3"); });
-    document.querySelector("#SoundTwo").addEventListener("mousedown", function (): void { playSampl("snare.mp3"); });
-    document.querySelector("#SoundThree").addEventListener("mousedown", function (): void { playSampl("hihat.mp3"); });
-    document.querySelector("#SoundFour").addEventListener("mousedown", function (): void { playSampl("F.mp3"); });
+    document.querySelector("#SoundFour").addEventListener("mousedown", function (): void { playSampl("snare.mp3"); });
+    document.querySelector("#SoundSeven").addEventListener("mousedown", function (): void { playSampl("hihat.mp3"); });
+    document.querySelector("#SoundTwo").addEventListener("mousedown", function (): void { playSampl("F.mp3"); });
     document.querySelector("#SoundFive").addEventListener("mousedown", function (): void { playSampl("G.mp3"); });
-    document.querySelector("#SoundSix").addEventListener("mousedown", function (): void { playSampl("A.mp3"); });
-    document.querySelector("#SoundSeven").addEventListener("mousedown", function (): void { playSampl("C.mp3"); });
-    document.querySelector("#SoundEight").addEventListener("mousedown", function (): void { playSampl("laugh-1.mp3"); });
+    document.querySelector("#SoundEight").addEventListener("mousedown", function (): void { playSampl("A.mp3"); });
+    document.querySelector("#SoundThree").addEventListener("mousedown", function (): void { playSampl("C.mp3"); });
+    document.querySelector("#SoundSix").addEventListener("mousedown", function (): void { playSampl("laugh-1.mp3"); });
     document.querySelector("#SoundNine").addEventListener("mousedown", function (): void { playSampl("laugh-2.mp3"); });
     document.querySelector("#PlayBeat").addEventListener("click", PlayBeat);
     document.querySelector("#Mic").addEventListener("click", RecordBeat);
