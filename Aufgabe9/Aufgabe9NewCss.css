@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f9e1e0;
+    padding-top: 100px;
+}
+
+header {
+    width: 90%;
+    height: 80px;
+    position: fixed;
+    padding: 15px;
+    left: 0px;
+    top: 0;
+    z-index: 5;
+    background: #355c7d;
+    box-shadow: 8px 2px 4px rgb(44,62,100);
+    border-bottom-right-radius: 10px;
+}
+
+header input {
+    width: 100%;
+    height: 50px;
+    float: left;
+    font-size: 20px;
+    background: rgba(255, 255,255,0.2);
+    border-radius: 5px;
+    border: 0px;
+    box-shadow: none;
+    outline: none;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    color: #ffffff;
+    padding: 0 0 0 5px;
+    cursor: default;
+}
+
+.fa-plus {
+    color: #355c7d;
+}
+
+.fa-plus:hover {
+    color: #f67280;
+}
+
+.fa-trash {
+    color: #f9e1e0;
+}
+
+.fa-trash:hover {
+    color: #f67280;
+}
+
+
+#add {
+    background: #ffffff8f;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    z-index: 2;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border: 0px;
+    box-shadow: none;
+}
+
+button {
+    position: relative;
+    top: -20px;
+    height: 40px;
+    width: 40px;
+    border: 0px;
+    box-shadow: none;
+    background: #2c5477;
+}
+
+ul {
+    position: absolute;
+    top: 150px;
+    width: 90%;
+    float: left;
+    border-radius: 5px;
+}
+
+li {
+    padding: 9px;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.75);
+    background: #2c5477;
+    box-shadow: 1px 1px 2px rgba(8, 16, 24, 0.699);
+    margin: 20px;
+    border-radius: 5px;
+    list-style: none;
+}
+
+.container {
+    width: 95%;
+    padding: 15px;
+}
+
+.buttons {
+    width: 100px;
+    height: 20px;
+    position: relative;
+    left: 90%;
+    border-radius: 5px;
+}
+
+#counter {
+    position: absolute;
+    top: 130px;
+    left: 70px;
+    font-size: 20px;
+    padding: 10px;
+    background: #2c5477;
+    color: rgba(255, 255, 255, 0.75);
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px rgba(8, 16, 24, 0.699);
+}
+
+
+.done {
+    position: absolute;
+    top: -8px;
+    left: 45px;
+}
