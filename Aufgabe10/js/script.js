@@ -11,10 +11,20 @@
  * Werte, bspw. Stelle 0 im Array todosText und Stelle 0 im Array
  * todosChecked gehören zusammen zu einem ToDo.
  */
-var todos = {
-    text: ["Lorem", "Ipsum", "Dolor"],
-    checked: [true, false, false]
-};
+var todos = [
+    {
+        text: "Lorem",
+        checked: true
+    },
+    {
+        text: "Ipsum",
+        checked: false
+    },
+    {
+        text: "Dolor",
+        checked: false
+    }
+];
 /**
  * Die Anwendung wird immer wieder auf die selben
  * DOM-Elemente zugreifen müssen. Damit diese Elemente nicht
@@ -71,8 +81,8 @@ function drawListToDOM() {
          * ein Wert einer Variablen benötigt (bspw. für die CSS Klasse oder für den ToDo-Text),
          * hier muss die Zeichenkette unterbrochen werden.
          */
-        todo.innerHTML = "<span class='check " + todos.checked[index_1] + "'><i class='fas fa-check'></i></span>"
-            + todos.text[index_1] +
+        todo.innerHTML = "<span class='check " + todos[index_1].checked + "'><i class='fas fa-check'></i></span>"
+            + todos[index_1].text +
             "<span class='trash fas fa-trash-alt'></span>";
         // Zuweisen der Event-Listener für den Check- und den Trash-Button
         todo.querySelector(".check").addEventListener("click", function () {
@@ -90,7 +100,7 @@ function drawListToDOM() {
         todosDOMElement.insertBefore(todo, todosDOMElement.childNodes[0]);
     };
     // das ToDo-Array durchlaufen (iterieren) und Todo für Todo in den DOM schreiben
-    for (var index_1 = 0; index_1 < todos.text.length; index_1++) {
+    for (var index_1 = 0; index_1 < todos.length; index_1++) {
         _loop_1(index_1);
     }
     updateCounter();
@@ -98,15 +108,15 @@ function drawListToDOM() {
 function updateCounter() {
     var unchecked = 0;
     var checked = 0;
-    for (var i = 0; i < todos.checked.length; i++) {
-        if (todos.checked[i] == true) {
+    for (var i = 0; i < todos.length; i++) {
+        if (todos[i].checked == true) {
             checked++;
         }
         else {
             unchecked++;
         }
     }
-    counterDOMElement.innerHTML = todos.text.length + " in total" + " | " + unchecked + "  open" + " | " + checked + "  done";
+    counterDOMElement.innerHTML = todos.length + " in total" + " | " + unchecked + "  open" + " | " + checked + "  done";
 }
 /**
  * Ein neues ToDo wird folgendermaßen erstellt:
@@ -125,8 +135,10 @@ function addTodo() {
          * Status der ToDos abbildet, für dieses ToDo (weil selbe Stelle im Array)
          * der Status "unchecked", hier false, gepusht.
          */
-        todos.text.push(inputDOMElement.value);
-        todos.checked.push(false);
+        todos.unshift({
+            text: inputDOMElement.value,
+            checked: false
+        });
         // Jetzt wird der Text aus dem Eingabefeld gelöscht
         inputDOMElement.value = "";
         /**
@@ -153,7 +165,7 @@ function toggleCheckState(index) {
      * Alternativ könnte man hier natürlich auch andere Schreibweisen (wie sie im
      * Kurs behandelt wurden) nutzen.
      */
-    todos.checked[index] = !todos.checked[index];
+    todos[index].checked = !todos[index].checked;
     /**
      * Die zentrale Funktion, um die Liste des ToDo-Arrays in den DOM zu rendern
      * wird wieder getriggert
@@ -170,8 +182,8 @@ function deleteTodo(index) {
      * Jetzt muss diese Stelle beider Arrays gelöscht werden,
      * das ToDo-Text-Array und das Checked/Unchecked-Array
      */
-    todos.text.splice(index, 1);
-    todos.checked.splice(index, 1);
+    todos.splice(index, 1);
+    todos.splice(index, 1);
     /**
      * Die zentrale Funktion, um die Liste des ToDo-Arrays in den DOM zu rendern
      * wird wieder getriggert
@@ -186,8 +198,10 @@ window.addEventListener("load", function () {
         smart: true,
         action: function (i, wildcard) {
             console.log(wildcard);
-            todos.text.push(wildcard);
-            todos.checked.push(false);
+            todos.push({
+                text: (wildcard),
+                checked: false
+            });
             drawListToDOM();
         }
     });

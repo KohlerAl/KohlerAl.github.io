@@ -13,15 +13,24 @@
  */
 
 interface Todos {
-    text: string[];
-    checked: boolean[];
+    text: string;
+    checked: boolean;
 }
 
-var todos: Todos = {
-    text: ["Lorem" , "Ipsum" , "Dolor"],
-    checked: [true    , false   , false]
-};
-
+var todos: Todos[] = [
+    {
+        text: "Lorem",
+        checked: true
+    },
+    {
+        text: "Ipsum",
+        checked: false
+    },
+    {
+        text: "Dolor",
+        checked: false
+    }
+];
 
 /**
  * Die Anwendung wird immer wieder auf die selben
@@ -69,7 +78,7 @@ function drawListToDOM(): void {
     todosDOMElement.innerHTML = "";
 
     // das ToDo-Array durchlaufen (iterieren) und Todo für Todo in den DOM schreiben
-    for (let index: number = 0; index < todos.text.length; index++) {
+    for (let index: number = 0; index < todos.length; index++) {
 
         /**
          * Neues DIV-Element erstellen (würde auch mit innerHTML = "<div class='todo'></div>" gehen, 
@@ -88,8 +97,8 @@ function drawListToDOM(): void {
          * ein Wert einer Variablen benötigt (bspw. für die CSS Klasse oder für den ToDo-Text),
          * hier muss die Zeichenkette unterbrochen werden.
          */
-        todo.innerHTML =  "<span class='check " + todos.checked[index] + "'><i class='fas fa-check'></i></span>"
-                            + todos.text[index] +
+        todo.innerHTML =  "<span class='check " + todos[index].checked + "'><i class='fas fa-check'></i></span>"
+                            + todos[index].text +
                             "<span class='trash fas fa-trash-alt'></span>";
 
         // Zuweisen der Event-Listener für den Check- und den Trash-Button
@@ -116,15 +125,15 @@ function updateCounter(): void {
     var unchecked: number = 0;
     var checked: number = 0;
 
-    for (var i: number = 0; i < todos.checked.length; i++ ) {
-        if (todos.checked[i] == true) {
+    for (var i: number = 0; i < todos.length; i++ ) {
+        if (todos[i].checked == true) {
             checked++;
         }
         else {
             unchecked++;
         }
     }
-    counterDOMElement.innerHTML = todos.text.length + " in total" + " | " + unchecked + "  open" + " | " + checked + "  done";
+    counterDOMElement.innerHTML = todos.length + " in total" + " | " + unchecked + "  open" + " | " + checked + "  done";
 }
 
 /**
@@ -144,8 +153,12 @@ function addTodo(): void {
          * Status der ToDos abbildet, für dieses ToDo (weil selbe Stelle im Array)
          * der Status "unchecked", hier false, gepusht.
          */
-        todos.text.push(inputDOMElement.value);
-        todos.checked.push(false);
+        todos.unshift(
+            {
+            text: inputDOMElement.value,
+            checked: false
+            }
+        );
         
         // Jetzt wird der Text aus dem Eingabefeld gelöscht
         inputDOMElement.value = "";
@@ -176,7 +189,7 @@ function toggleCheckState(index: number): void {
      * Alternativ könnte man hier natürlich auch andere Schreibweisen (wie sie im
      * Kurs behandelt wurden) nutzen.
      */
-    todos.checked[index] = !todos.checked[index];
+    todos[index].checked = !todos[index].checked;
 
     /**
      * Die zentrale Funktion, um die Liste des ToDo-Arrays in den DOM zu rendern
@@ -195,8 +208,8 @@ function deleteTodo(index: number): void {
      * Jetzt muss diese Stelle beider Arrays gelöscht werden,
      * das ToDo-Text-Array und das Checked/Unchecked-Array
      */
-    todos.text.splice(index, 1);
-    todos.checked.splice(index, 1);
+    todos.splice(index, 1);
+    todos.splice(index, 1);
     
     /**
      * Die zentrale Funktion, um die Liste des ToDo-Arrays in den DOM zu rendern
@@ -216,8 +229,11 @@ window.addEventListener("load", function(): void {
         smart: true,
         action: function(i: any, wildcard: string): void {
             console.log(wildcard);
-            todos.text.push(wildcard);
-            todos.checked.push(false);
+            todos.push ({
+               text: (wildcard),
+               checked: false
+            }
+            );
             drawListToDOM();
         }
     });
