@@ -38,16 +38,16 @@ var WertZweiAfrica: number = emissionAfrica2018 * 100 / totalEmission2018;
 var WertDreiAfrica: number = (emissionAfrica2018 - emissionAfrica2008) * 100 / emissionAfrica2008;
 var WertVierAfrica: number = emissionAfrica2018 - emissionAfrica2008;
 
-function functionEurope() {
-    document.querySelector("#Title").innerHTML = "Carbon Dioxide Emissions in Europe"
-    document.querySelector("#WertEinsText").innerHTML = "Emission absolute of Europe in 2018"
+function functionEurope(): void  {
+    document.querySelector("#Title").innerHTML = "Carbon Dioxide Emissions in Europe";
+    document.querySelector("#WertEinsText").innerHTML = "Emission absolute of Europe in 2018";
     document.querySelector("#WertEins").innerHTML = "" + emissionEurope2018;
     document.querySelector("#WertZwei").innerHTML = "" + WertZweiEurope;
     document.querySelector("#WertDrei").innerHTML = "" + WertDreiEurope;
     document.querySelector("#WertVier").innerHTML = "" + WertVierEurope;
     document.querySelector(".chart").setAttribute('style', 'height:' + WertZweiEurope + '%');
 }
-window.addEventListener('load', function () {
+window.addEventListener("load", function (): void {
     document.querySelector('#Europe').addEventListener('click', functionEurope);
 });
 
@@ -64,7 +64,7 @@ window.addEventListener('load', function () {
     document.querySelector('#Asia').addEventListener('click', functionAsia);
 });
 
-function functionNorthA() {
+function functionNorthA(): void {
     document.querySelector("#Title").innerHTML = "Carbon Dioxide Emissions in North America"
     document.querySelector("#WertEinsText").innerHTML = "Emission absolute of North America in 2018"
     document.querySelector("#WertEins").innerHTML = "" + emissionNorthAmerica2018;

@@ -38,7 +38,7 @@ function functionEurope() {
     document.querySelector("#WertVier").innerHTML = "" + WertVierEurope;
     document.querySelector(".chart").setAttribute('style', 'height:' + WertZweiEurope + '%');
 }
-window.addEventListener('load', function () {
+window.addEventListener("load", function () {
     document.querySelector('#Europe').addEventListener('click', functionEurope);
 });
 function functionAsia() {

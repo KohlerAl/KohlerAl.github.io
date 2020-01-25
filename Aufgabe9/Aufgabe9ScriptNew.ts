@@ -18,6 +18,7 @@ function deleteItems(): void {
 window.addEventListener("load", function(): void {
 document.querySelector(".fa-trash").addEventListener("click", deleteItems);
 
+
 function addItem (text): void {
 
     var list: HTMLElement = document.getElementById("list");

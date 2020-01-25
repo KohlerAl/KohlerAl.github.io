@@ -1,0 +1,215 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #777;
+    color: #999;
+}
+
+.cardred {
+    display: inline-block;
+    height: 60px;
+    width: 40px;
+    position: relative;
+    top: 15px;
+    margin: 5px;
+    border-style: solid;
+    border-top-color: #555;   
+    border-color: #444;  
+    border-width: 1px; 
+    border-radius: 10px;
+    padding: 10px;
+    background: linear-gradient(#444, #333);
+    box-shadow: 5px 5px 5px rgba(102, 102, 102, 0.8);
+    font-size: 16px;
+    font-weight: lighter;
+    color: #fd9184;
+}
+
+.cardblue {
+    display: inline-block;
+    height: 60px;
+    width: 40px;
+    position: relative;
+    top: 15px;
+    margin: 5px;
+    border-style: solid;
+    border-top-color: #555;   
+    border-color: #444;  
+    border-width: 1px; 
+    border-radius: 10px;
+    padding: 10px;
+    background: linear-gradient(#444, #333);
+    box-shadow: 5px 5px 5px rgba(102, 102, 102, 0.8);
+    font-size: 16px;
+    font-weight: lighter;
+    color: #25d5db;
+    
+}
+
+.cardyellow {
+    display: inline-block;
+    height: 60px;
+    width: 40px;
+    position: relative;
+    top: 15px;
+    margin: 5px;
+    border-style: solid;
+    border-top-color: #555;   
+    border-color: #444;  
+    border-width: 1px; 
+    border-radius: 10px;
+    padding: 10px;
+    background: linear-gradient(#444, #333);
+    box-shadow: 5px 5px 5px rgba(102, 102, 102, 0.8);
+    font-size: 16px;
+    font-weight: lighter;
+    color: #F3d24c;
+}
+
+.cardgreen {
+    display: inline-block;
+    height: 60px;
+    width: 40px;
+    position: relative;
+    top: 15px;
+    margin: 5px;
+    border-style: solid;
+    border-top-color: #555;   
+    border-color: #444;  
+    border-width: 1px; 
+    border-radius: 10px;
+    padding: 10px;
+    background: linear-gradient(#444, #333);
+    box-shadow: 5px 5px 5px rgba(102, 102, 102, 0.8);
+    font-size: 16px;
+    font-weight: lighter;
+    color: #a0e493;
+}
+
+.flip {
+    transform: rotate(180deg);
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+}
+
+.fa-info-circle {
+    position: relative;
+    top: -163px;
+}
+
+#player {
+    padding: 20px;
+    background: #fff;
+    border-style: solid;
+    border-color: #d06649;
+    border-top-color: #f2785a;
+    border-width: 2px;
+    box-shadow: 8px 10px 5px rgba(92, 92, 92, 0.8);
+    position: relative;
+    top: -105px;
+    width: 95%;
+    height: 120px;
+    border-radius: 10px;
+    color: #444;
+}
+
+p {
+    position: relative;
+    margin-top: -6px;
+}
+#computer {
+    padding: 20px;
+    background: #fff;
+    border-style: solid;
+    border-color: #e79756;
+    border-top-color: #ffae6c;
+    border-width: 2px;
+    box-shadow: 8px 10px 5px rgba(92, 92, 92, 0.8);
+    position: relative;
+    top: 25px;
+    width: 95%;
+    height: 120px;
+    border-radius: 10px;
+    color: #444;
+}
+
+#storage {
+    padding: 20px;
+    background: #fff;
+    border-style: solid;
+    border-color: #dbb75e;
+    border-top-color: #f7d176;
+    border-width: 2px;
+    box-shadow: 8px 10px 5px rgba(92, 92, 92, 0.8);
+    position: relative; 
+    top: 45px;
+    width: 45%;
+    height: 120px;
+    border-radius: 10px;
+    color: #444;
+}
+
+#start {
+    padding: 20px;
+    background: #fff;
+    border-style: solid;
+    border-color: #1b9486;
+    border-top-color: #36a698;
+    border-width: 2px;
+    box-shadow: 8px 10px 5px rgba(92, 92, 92, 0.8);
+    width: 45%;
+    height: 121px;
+    position: relative;
+    border-radius: 10px;
+    left: 50%;
+    top: -120px;
+    color: #444;
+}
+
+.fa-info-circle {
+    position: relative;
+    top: -82px;
+    color: #5ca0bb;
+}
+
+footer {
+    background-color: #5ca0bb;
+    padding: 10px;
+    border-radius: 5px;
+    width: 96%;
+    box-shadow: 8px 10px 5px rgba(92, 92, 92, 0.8);
+    position: relative;
+    top: -70px;
+    height: 20px;
+    color: #222;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.background {
+    display: inline-block;
+    height: 60px;
+    width: 40px;
+    position: relative;
+    top: 15px;
+    margin: 5px;
+    border-style: solid;
+    border-top-color: #555;   
+    border-color: #444;  
+    border-width: 1px; 
+    border-radius: 10px;
+    padding: 10px;
+    background: linear-gradient(#444, #333);
+    box-shadow: 5px 5px 5px rgba(102, 102, 102, 0.8);
+    font-size: 16px;
+    font-weight: light;
+    color: #999;
+}
+
+.background p {
+    position: relative;
+    top: 20px;
+    left: 2px;
+}
