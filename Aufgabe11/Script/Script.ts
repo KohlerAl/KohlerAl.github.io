@@ -140,6 +140,9 @@ function createCards(): void {
      * Je nach dem welche Farbe die Karte hat, wird dem div mittels einer if-else Anweisung 
      * eine andere Klasse angehängt
      * * */
+    if (cardstart.length == 0) {
+        reshuffle();
+    }
     for (index = 0; index < 1; index++) {
         start.innerHTML = "";
         start.innerHTML = "<p> Ziehstapel | " + cardstart.length + "</p>";
@@ -157,16 +160,17 @@ function createCards(): void {
             newdiv.classList.add("underline");
             newdiv.innerHTML = "" + cardstart[index].number + "<label class='flip'> <p class='underline'>" + cardstart[index].number + "</p> </label>";
         }
-        // Nach der Klasse bekommt die Karte ihre Wertigkeit
+        // Für alle anderen Wertigkeiten werden die Karten ohne die Klasse underline erstellt
         else {
         newdiv.innerHTML = "" + cardstart[index].number + "<label class='flip'> <p>" + cardstart[index].number + "</p> </label>"; }
         //Anschließend wird die neue Div-Box in den DOM gerendert
+        newdiv.addEventListener("click", drawPlayerCard);
         start.appendChild(newdiv);
     } 
 }
 createCards();
 
-// Nach dem selben Prinzip werden auch die Karten für den Computer erstellt, hier jedoch nur drei
+// Nach dem selben Prinzip werden auch die Karten für den Computer erstellt
 function createComputerCards(): void {
     computer.innerHTML = "";
     computer.innerHTML = "<p>Computer</p>";
@@ -186,14 +190,15 @@ function createComputerCards(): void {
         }
         else {
         newdiv.innerHTML = "" + cardcomputer[index].number + "<label class='flip'> <p>" + cardcomputer[index].number + "</p> </label>"; }
+        newdiv.addEventListener("click", computerCards);
         computer.appendChild(newdiv);
-    }    
+    }
 }
 createComputerCards(); 
 
 function createStorageCards(): void {
     storage.innerHTML = "";
-    storage.innerHTML = "<p>Ablagestapel</p>";
+    storage.innerHTML = "<p>Ablagestapel  |   " + cardstorage.length + "</p>";
     for (index = 0; index < 1; index++) {
     var newdiv: HTMLDivElement = document.createElement("div");
     if (cardstorage[index].color == "red") {
@@ -214,14 +219,31 @@ function createStorageCards(): void {
 }
 createStorageCards();
 
-function moveCards (): void {
-    if (cardplayer[this].color == cardstorage[0].color) {
-        console.log(this);
+function moveCards (position: number): void {
+    console.log(position);
+    if (cardplayer[position].color == cardstorage[0].color) {
+        cardstorage.unshift ({
+            color: cardplayer[position].color,
+            number: cardplayer[position].number,
+            front: cardplayer[position].front
+        });
+        cardplayer.splice(position, 1);
+    } else if (cardplayer[position].number == cardstorage[0].number) {
+        cardstorage.unshift ({
+            color: cardplayer[position].color,
+            number: cardplayer[position].number,
+            front: cardplayer[position].front
+        });
+        cardplayer.splice(position, 1);
     }
+    createPlayerCards();
+    createStorageCards();
 }
 
 function createPlayerCards(): void {
-    for (index = 0; index < 3; index++) {
+    player.innerHTML = "";
+    player.innerHTML = "<p> Spieler </p>";
+    for (index = 0; index < cardplayer.length; index++) {
         var newdiv: HTMLDivElement = document.createElement("div");
         if (cardplayer[index].color == "red") {
         newdiv.className = "cardred"; }
@@ -237,27 +259,65 @@ function createPlayerCards(): void {
         }
         else {
         newdiv.innerHTML = "" + cardplayer[index].number + "<label class='flip'> <p>" + cardplayer[index].number + "</p> </label>"; }
-        console.log("Der Index in createPlayerCards ist " + index);
         /**
          * Da dies die Karten sind, mit denen der Nutzer später "interagiert", brauchen sie zusätzlich einen 
          * Event-Listener, der die Funktion moveCards aufruft
          */
-        newdiv.addEventListener("click", moveCards);
+        var position: number = index;
+        console.log(position);
+        newdiv.addEventListener("click", function(): void {
+            moveCards(position);
+        });
         player.appendChild(newdiv);
     }    
 }
 createPlayerCards();
 
 function computerCards (): void {
+    /**
+     * Sollte der Ziehstapel leer sein, wird die Funktion reshuffle aufegrufen, damit im Ziehstapel
+     * wieder Karten sind 
+     */
+    if (cardstart.length == 0) {
+        reshuffle();
+    }
+    /**
+     * Ist der Ziehstapel nicht leer, wird die Funktion ausgeführt
+     */
+    else {
+    var fallback: number = 0;
     for (index = 0; index < cardcomputer.length; index++) {
+        /**
+         * Wenn die Farbe der Karten übereinstimmt, wird die Funktion moveCC aufgerufen, die die
+         * jeweilige Karte in das Array des Ablagestapels schiebt. Damit die Funktion danach nicht 
+         * weiter durchläuft, wird index auf denselben Wert wie die Länge des Computer-Arrays gesetzt. 
+         * Damit ist die Abbruchbedingung erfüllt. Fallback wird wieder auf Null gesetzt. 
+         */
         if (cardcomputer[index].color == cardstorage[0].color) {
             moveCC();
-            console.log("Hello");
+            index = cardcomputer.length;
+            fallback = 0;
         }
         else if (cardcomputer[index].number == cardstorage[0].number) {
             moveCC();
-            console.log("World");
+            index = cardcomputer.length;
+            fallback = 0;
         }
+        else (fallback ++); 
+    } 
+    /*
+    * Sollte keine der Karten passen, hat fallback die Länge des Computer-Arrays. Die Bedingung ist erfüllt. Damit der Computer auch 
+    gewinnen kann, darf die Bedingung nicht ausgelöst werden, wenn fallback 0 ist. 
+    */
+    if (fallback == cardcomputer.length && fallback != 0) {
+        cardcomputer.unshift ({
+            color: cardstart[0].color,
+            number: cardstart[0].number,
+            front: cardstart[0].front
+        });
+        cardstart.splice(0, 1);
+        createCards();
+        createComputerCards(); }
     }
 }
 
@@ -271,9 +331,35 @@ function moveCC (): void {
     createComputerCards();
     createStorageCards();
 }
-computer.addEventListener("click", computerCards);
+
+
+function drawPlayerCard (): void {
+    if (cardstart.length == 0) {
+        reshuffle();
+    }
+    else { cardplayer.unshift ({
+        color: cardstart[0].color,
+        number: cardstart[0].number,
+        front: cardstart[0].front
+    });
+           cardstart.splice(0, 1);
+           createCards();
+           createPlayerCards(); }
+}
+
+function reshuffle (): void {
+    for (index = 1; index < cardstorage.length; index++) {
+        cardstart.unshift ({
+            color: cardstorage[index].color,
+            number: cardstorage[index].number,
+            front: cardstorage[index].front
+        });
+        cardstorage.splice(index, 1);
+    }
+    mixCard();
+}
 
 /*Bei klick auf das Icon öffnet sich ein Alert-Fenster mit den Spielregeln*/
-document.querySelector(".fa-info-circle").addEventListener("click", function(): void {
+document.querySelector("#rules").addEventListener("click", function(): void {
     alert("Spielregeln \n 1. Der Spieler beginnt \n 2. Es dürfen nur Karten gespielt werden, die dieselbe Wertigkeit oder dieselbe Farbe besitzen. \n 3. Ist keine passende Karte vorhanden, muss eine Karte gezogen werden \n 4. Das Spiel gewinnt, wer zuerst keine Karten mehr hat");
 });
