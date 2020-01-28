@@ -1,7 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #777;
-    color: #999;
+    background-color: #444;
+    color: #fff;
 }
 
 .cardred {
@@ -103,8 +103,8 @@ body {
     border-style: solid;
     border-color: #d06649;
     border-top-color: #f2785a;
-    border-width: 2px;
-    box-shadow: 8px 10px 5px rgba(92, 92, 92, 0.8);
+    border-width: 3px;
+    box-shadow: 8px 10px 5px rgba(15, 15, 15, 0.8);
     position: relative;
     top: -105px;
     width: 95%;
@@ -121,10 +121,10 @@ p {
     padding: 20px;
     background: #fff;
     border-style: solid;
-    border-color: #e79756;
-    border-top-color: #ffae6c;
-    border-width: 2px;
-    box-shadow: 8px 10px 5px rgba(92, 92, 92, 0.8);
+    border-color: #86d676;
+    border-top-color: #bce9b3;
+    border-width: 3px;
+    box-shadow: 8px 10px 5px rgba(15, 15, 15, 0.8);
     position: relative;
     top: 25px;
     width: 95%;
@@ -139,8 +139,8 @@ p {
     border-style: solid;
     border-color: #dbb75e;
     border-top-color: #f7d176;
-    border-width: 2px;
-    box-shadow: 8px 10px 5px rgba(92, 92, 92, 0.8);
+    border-width: 3px;
+    box-shadow: 8px 10px 5px rgba(15, 15, 15, 0.8);
     position: relative; 
     top: 45px;
     width: 42%;
@@ -155,8 +155,8 @@ p {
     border-style: solid;
     border-color: #1b9486;
     border-top-color: #36a698;
-    border-width: 2px;
-    box-shadow: 8px 10px 5px rgba(92, 92, 92, 0.8);
+    border-width: 3px;
+    box-shadow: 8px 10px 5px rgba(15, 15, 15, 0.8);
     width: 45%;
     height: 121px;
     position: relative;
@@ -172,6 +172,7 @@ p {
     top: -90px;
     width: 150px;
     height: 40px;
+    cursor: pointer;
 }
 #rules i {
     position: relative;
@@ -187,7 +188,7 @@ footer {
     padding: 10px;
     border-radius: 5px;
     width: 96%;
-    box-shadow: 8px 10px 5px rgba(92, 92, 92, 0.8);
+    box-shadow: 8px 10px 5px rgba(15, 15, 15, 0.8);
     position: relative;
     top: -100px;
     height: 20px;
@@ -215,11 +216,21 @@ footer {
     box-shadow: 5px 5px 5px rgba(102, 102, 102, 0.8);
     font-size: 16px;
     font-weight: light;
-    color: #999;
+    color: #fff;
 }
 
 .background p {
     position: relative;
     top: 20px;
     left: 2px;
+}
+
+.playerwins {
+    font-size: 50px; 
+    color: #d06649;
+}
+
+.computerwins {
+    font-size: 50px; 
+    color: #a0e493;
 }

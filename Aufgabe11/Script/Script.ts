@@ -3,6 +3,7 @@ var computer: Element = document.querySelector("#computer");
 var player: Element = document.querySelector("#player");
 var storage: Element = document.querySelector("#storage");
 var start: Element = document.querySelector("#start");
+var index: number;
 
 /**
  * Erstellen eines Interfaces für die Karten, bestehend aus einer Zahl, einer Farbe und einem 
@@ -125,25 +126,20 @@ shuffleCards();
  * Die Karten werden nach dem Mischen und Verteilen in den DOM gerendert
  */
 function createCards(): void {
+    if (cardstart.length == 0) {
+        reshuffle();
+    }
    
-    /*
     for (index = 0; index < 1; index++) {
         start.innerHTML = "";
         start.innerHTML = "<p> Ziehstapel | " + cardstart.length + "</p>";
         var newdiv: HTMLDivElement = document.createElement("div");
         newdiv.className = "background";
         newdiv.innerHTML = "<p class='far fa-paper-plane fa-2x' </p>";
+        newdiv.addEventListener("click", drawPlayerCard);
         start.appendChild(newdiv);
-    } */
-    /**
-     * Eine for-Schleife durchläuft das erste Element des Arrays.
-     * Je nach dem welche Farbe die Karte hat, wird dem div mittels einer if-else Anweisung 
-     * eine andere Klasse angehängt
-     * * */
-    if (cardstart.length == 0) {
-        reshuffle();
-    }
-    for (index = 0; index < 1; index++) {
+    } 
+   /* for (index = 0; index < 1; index++) {
         start.innerHTML = "";
         start.innerHTML = "<p> Ziehstapel | " + cardstart.length + "</p>";
         var newdiv: HTMLDivElement = document.createElement("div");
@@ -166,12 +162,22 @@ function createCards(): void {
         //Anschließend wird die neue Div-Box in den DOM gerendert
         newdiv.addEventListener("click", drawPlayerCard);
         start.appendChild(newdiv);
-    } 
+    } */
 }
 createCards();
 
-// Nach dem selben Prinzip werden auch die Karten für den Computer erstellt
 function createComputerCards(): void {
+    if (cardcomputer.length == 0) {
+        computer.innerHTML = "";
+        player.innerHTML = "";
+        computer.innerHTML = "<p class='computerwins'> Der Computer hat gewonnen <p> ";
+    }
+    /**
+     * Eine for-Schleife durchläuft das erste Element des Arrays.
+     * Je nach dem welche Farbe die Karte hat, wird dem div mittels einer if-else Anweisung 
+     * eine andere Klasse angehängt
+    */
+    else {
     computer.innerHTML = "";
     computer.innerHTML = "<p>Computer</p>";
     for (index = 0; index < cardcomputer.length; index++) {
@@ -193,6 +199,7 @@ function createComputerCards(): void {
         newdiv.addEventListener("click", computerCards);
         computer.appendChild(newdiv);
     }
+}
 }
 createComputerCards(); 
 
@@ -220,7 +227,7 @@ function createStorageCards(): void {
 createStorageCards();
 
 function moveCards (position: number): void {
-    console.log(position);
+    console.log("Position: " + position);
     if (cardplayer[position].color == cardstorage[0].color) {
         cardstorage.unshift ({
             color: cardplayer[position].color,
@@ -241,9 +248,19 @@ function moveCards (position: number): void {
 }
 
 function createPlayerCards(): void {
+    /**
+     * Sollte das Array keine Karten enthalten, wird dem Nutzer eine Nachricht angezeigt, dass das 
+     * Spiel beendet ist
+     */
+    if (cardplayer.length == 0) {
+        player.innerHTML = "";
+        computer.innerHTML = "";
+        player.innerHTML = "<p class='playerwins'> Herzlichen Glückwunsch, du hast gewonnen! :) <p> ";
+    }
+    else {
     player.innerHTML = "";
     player.innerHTML = "<p> Spieler </p>";
-    for (index = 0; index < cardplayer.length; index++) {
+    for (let index:number = 0; index < cardplayer.length; index++) {
         var newdiv: HTMLDivElement = document.createElement("div");
         if (cardplayer[index].color == "red") {
         newdiv.className = "cardred"; }
@@ -263,13 +280,14 @@ function createPlayerCards(): void {
          * Da dies die Karten sind, mit denen der Nutzer später "interagiert", brauchen sie zusätzlich einen 
          * Event-Listener, der die Funktion moveCards aufruft
          */
-        var position: number = index;
-        console.log(position);
+        console.log(index);
+        //var position: number = index;
         newdiv.addEventListener("click", function(): void {
-            moveCards(position);
+            moveCards(index);
         });
         player.appendChild(newdiv);
     }    
+}
 }
 createPlayerCards();
 
@@ -316,11 +334,16 @@ function computerCards (): void {
             front: cardstart[0].front
         });
         cardstart.splice(0, 1);
+        /* Danach werden die geänderten Arrays wieder in den DOM gezeichnet um den geänderten Spielstand anzuzeigen*/
         createCards();
         createComputerCards(); }
     }
 }
 
+/**
+ * Die Funktion pusht die jeweilige Karte in das Array des Ablagestapels und entfernt sie
+ * anschließend aus dem Array der Computer-Karten 
+ */
 function moveCC (): void {
     cardstorage.unshift ({
         color: cardcomputer[index].color,
@@ -328,10 +351,10 @@ function moveCC (): void {
         front: cardcomputer[index].front
     }); 
     cardcomputer.splice(index, 1);
+    /* Es werden die Funktionen aufgerufen, die die beiden geänderten Arrays in den DOM zeichnen */
     createComputerCards();
     createStorageCards();
 }
-
 
 function drawPlayerCard (): void {
     if (cardstart.length == 0) {
@@ -347,6 +370,10 @@ function drawPlayerCard (): void {
            createPlayerCards(); }
 }
 
+/**
+ * Sollten sich im Ziehstapel keine Karten mehr befinden, werden alle Karten 
+ * bis auf die oberste aus dem Ablagestapel in den Ziehstapel gepusht
+ */
 function reshuffle (): void {
     for (index = 1; index < cardstorage.length; index++) {
         cardstart.unshift ({
@@ -356,6 +383,7 @@ function reshuffle (): void {
         });
         cardstorage.splice(index, 1);
     }
+    // Anschließend wird die Funktion zum mischen der Karten im Ziehstapel aufgerufen 
     mixCard();
 }
 
