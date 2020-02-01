@@ -78,7 +78,7 @@ body {
     border-width: 1px; 
     border-radius: 10px;
     padding: 10px;
-    background: linear-gradient(#444, #333);
+    background: linear-gradient(135deg, #444, #333);
     box-shadow: 5px 5px 5px rgba(102, 102, 102, 0.8);
     font-size: 16px;
     font-weight: lighter;
@@ -99,7 +99,7 @@ body {
 
 #player {
     padding: 20px;
-    background: #fff;
+    background: linear-gradient(90deg, #fff 95%, #ebeaea);
     border-style: solid;
     border-color: #d06649;
     border-top-color: #f2785a;
@@ -119,7 +119,7 @@ p {
 }
 #computer {
     padding: 20px;
-    background: #fff;
+    background: linear-gradient(90deg, #fff 95%, #ebeaea);
     border-style: solid;
     border-color: #86d676;
     border-top-color: #bce9b3;
@@ -135,7 +135,7 @@ p {
 
 #storage {
     padding: 20px;
-    background: #fff;
+    background: linear-gradient(90deg, #fff 95%, #ebeaea);
     border-style: solid;
     border-color: #dbb75e;
     border-top-color: #f7d176;
@@ -151,7 +151,7 @@ p {
 
 #start {
     padding: 20px;
-    background: #fff;
+    background: linear-gradient(90deg, #fff 95%, #f3f3f3);
     border-style: solid;
     border-color: #1b9486;
     border-top-color: #36a698;
@@ -162,7 +162,7 @@ p {
     position: relative;
     border-radius: 10px;
     left: 50%;
-    top: -120px;
+    top: -121px;
     color: #444;
 }
 
@@ -233,4 +233,11 @@ footer {
 .computerwins {
     font-size: 50px; 
     color: #a0e493;
+}
+
+.fa-heart, .fa-star, .fa-moon, .fa-snowflake {
+    position: relative;
+    top: 21px;
+    left: 3px;
+    opacity: 0.5;
 }
